@@ -1,0 +1,12 @@
+# requirements
+fastapi
+uvicorn
+SQLAlchemy
+psycopg2
+asyncpg
+alembic
+
+
+# requirements-dev
+python-dotenv
+pydantic_settings
