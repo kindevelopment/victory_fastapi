@@ -6,5 +6,3 @@ app = FastAPI(
     title='Crm',
     version='1',
 )
-
-app.include_router(user_router)
