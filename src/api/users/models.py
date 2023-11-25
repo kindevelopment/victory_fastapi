@@ -16,8 +16,10 @@ class User(BaseModel):
     archive = mapped_column(Boolean, default=False)
     active_operator_session = mapped_column(Boolean, default=False)
     tg_id = mapped_column(Integer)
+    active_listener_session = mapped_column(Boolean, default=False)
     balance = mapped_column(Float)
     role_id = mapped_column(Integer)
+    projects_auto = mapped_column(Integer)
     department = mapped_column(String)
     position = mapped_column(String)
     assigned = mapped_column(String)
@@ -25,6 +27,7 @@ class User(BaseModel):
     group_id = mapped_column(Integer)
     uis_login = mapped_column(String)
     uis_password = mapped_column(String)
+    tg_link = mapped_column(String)
     rtc_on = mapped_column(Boolean, default=False)
     phone_number = mapped_column(String)
 
@@ -100,7 +103,7 @@ class ApiResults2(BaseModel):
     full_tr = mapped_column(Float)
     status_before_success = mapped_column(String)
     success_id = mapped_column(Integer)
-    children = relationship("Success_stat", back_populates="api_result2")
+    # children = relationship("Success_stat", back_populates="api_result2")
 
     __tablename__ = 'apiresults2'
 
@@ -173,8 +176,8 @@ class Oper_Stat_New(BaseModel):
 
 
 class Success_stat(BaseModel):
-    answer_id = mapped_column(ForeignKey("apiresults2.id"))
-    answer = relationship('ApiResults2', back_populates="success_stat")
+    # answer_id = mapped_column(ForeignKey("apiresults2.id"))
+    # answer = relationship('ApiResults2', back_populates="success_stat")
     site_id = mapped_column(Integer)
     project_id = mapped_column(Integer)
     assigned_id = mapped_column(Integer)
